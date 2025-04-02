@@ -1,26 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignupPage from "./components/auth/signupPage"; // Corrected path
+import LoginPage from "./components/auth/loginPage"; // Corrected path
+import ArtistPage from "./pages/ArtistPage"; // Ensure this file exists
 
-import ArtistPage from "./pages/ArtistPage"; // Import ArtistPage
-import LoginPage from "./components/auth/loginPage"; // Import LoginPage
-import SignupPage from "./components/auth/signupPage"; // Import SignupPage
-import Comments from './components/Comments/Comments';  // Adjusted to match casing
- // Import Comments (if you plan to use it directly in App.js)
-
-function App() {
+const App = () => {
     return (
         <Router>
             <Routes>
-                {/* Define routes for different pages */}
-                <Route path="/artist" element={<ArtistPage />} />
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="/" element={<ArtistPage />} /> {/* Home route */}
                 <Route path="/signup" element={<SignupPage />} />
-                
-               
-                { <Route path="/comments" element={<Comments />} /> }
+                <Route path="/login" element={<LoginPage />} />
             </Routes>
         </Router>
     );
-}
+};
 
 export default App;

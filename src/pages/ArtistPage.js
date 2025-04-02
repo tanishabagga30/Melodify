@@ -5,7 +5,8 @@ import useTrack from '../hooks/useTrack';
 import Song from '../components/Song/Song';
 import Albums from '../components/Artist/Albums';
 import Header from '../components/Artist/Header';
-import Comments from './components/Comments/Comments';  
+
+ 
 import albumData from '../data/albumData.json';
 import { auth } from '../firebase'; // Import Firebase auth
 
@@ -74,8 +75,6 @@ const ArtistPage = () => {
                 <Albums url={`/albums/${albumData[0].artist.id}`} title="Albums" albums={albumData} />
                 <Albums url={`/albums/${albumData[0].artist.id}`} title="Featured on" albums={albumData} />
 
-                {/* Comments Section */}
-                <Comments /> {/* This is where the Comments component is used */}
             </div>
         </div>
     );
